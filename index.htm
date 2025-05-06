@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OneDiplomas x Nexora | Internship Program</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background-color: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.7;
+    }
+    header {
+      background: #161b22;
+      padding: 1rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      color: #58a6ff;
+      font-size: 1.8rem;
+    }
+    nav a {
+      color: #c9d1d9;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #58a6ff;
+    }
+    #branding-logos {
+      background: linear-gradient(135deg, #1e1e1e, #121212);
+      padding: 60px 20px;
+      text-align: center;
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+  
+    #branding-logos h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 50px;
+      color: #ffffff;
+      letter-spacing: 2px;
+      text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.15);
+    }
+  
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 80px;
+      flex-wrap: wrap;
+    }
+  
+    .brand-logo {
+      height: 130px;
+      transition: transform 0.5s ease, filter 0.5s ease;
+      filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.3));
+    }
+  
+    .brand-logo:hover {
+      transform: scale(1.08) rotate(1deg);
+      filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.6));
+    }
+  
+    .animate-logo {
+      animation: fadeInUp 1.2s ease-out forwards;
+      opacity: 0;
+    }
+  
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    /* Responsive Logo Height */
+    @media (max-width: 768px) {
+      .brand-logo {
+        height: 100px;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .brand-logo {
+        height: 80px;
+      }
+    }
+    section {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 2rem;
+      color: #58a6ff;
+      margin-bottom: 1rem;
+    }
+    p, li {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li::before {
+      content: '✔';
+      color: #58a6ff;
+      margin-right: 0.6rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #58a6ff;
+      color: #0d1117;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #1f6feb;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.85rem;
+      margin: 0.75rem 0;
+      border-radius: 5px;
+      border: none;
+      background: #21262d;
+      color: #fff;
+      font-size: 1rem;
+    }
+    form button {
+      background-color: #58a6ff;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      color: #0d1117;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    form button:hover {
+      background-color: #1f6feb;
+    }
+    #check-onediplomas {
+      background: linear-gradient(145deg, #111111, #1c1c1c);
+      padding: 70px 20px;
+      text-align: center;
+      color: white;
+    }
+  
+    .onediplomas-wrapper h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+      color: #00e5ff;
+      font-weight: 700;
+    }
+  
+    .onediplomas-wrapper p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #cccccc;
+    }
+  
+    .onediplomas-button {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 18px;
+      color: #ffffff;
+      background-color: #00e5ff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+    }
+  
+    .onediplomas-button:hover {
+      background-color: #00c0d1;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.8);
+    }
+    footer {
+      background: #161b22;
+      padding: 2rem;
+      text-align: center;
+      color: #8b949e;
+      font-size: 0.95rem;
+      #branding-logos {
+    background: #0f0f0f;
+    padding: 60px 20px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+  }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>OneDiplomas x Nexora</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#problem">Problem</a>
+      <a href="#internship">Internship</a>
+      <a href="#apply">Apply</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  
+  <!-- About Section -->
+<section id="about" style="padding: 60px 20px; background-color: #121212; color: white; text-align: center;">
+  <div style="max-width: 1000px; margin: 0 auto;">
+    <h2 style="font-size: 36px; color: #00e5ff; margin-bottom: 20px;">About Our Collaboration</h2>
+    
+    <div style="margin-bottom: 40px;">
+      <h3 style="font-size: 28px; color: #ffffff;">Nexora Agency</h3>
+      <p style="font-size: 18px; color: #cccccc; line-height: 1.6;">
+        Nexora is a professional digital agency offering both online and offline services. We specialize in 
+        <strong>website development, graphic design, branding, digital marketing, and business growth strategies</strong>. 
+        Our goal is to help clients establish and grow their presence with innovative digital solutions.
+      </p>
+    </div>
+
+    <div>
+      <h3 style="font-size: 28px; color: #ffffff;">OneDiplomas Platform</h3>
+      <p style="font-size: 18px; color: #cccccc; line-height: 1.6;">
+        OneDiplomas is a dedicated platform designed to support diploma students. It offers easy access to 
+        <strong>GTU syllabus, past papers, and paper solutions</strong>. New features and tools are currently 
+        in development to further enhance student learning and success.
+      </p>
+    </div>
+  </div>
+</section>
+
+  <!-- Internship Program Section -->
+<section id="internship-program" style="background: #0f0f0f; color: #ffffff; padding: 60px 20px; text-align: center;">
+  <div style="max-width: 1000px; margin: auto;">
+    <h2 style="font-size: 36px; color: #00e5ff; margin-bottom: 20px;">Our Internship Program</h2>
+    
+    <p style="font-size: 18px; color: #cccccc; margin-bottom: 30px; line-height: 1.8;">
+      We proudly present a 15-day intensive internship program in collaboration between <strong>Nexora Agency</strong> and <strong>OneDiplomas</strong>, designed especially for students who want to gain real-world skills and experience.
+      <br><br>
+      Whether you're interested in <strong>web development, graphic design, digital marketing, or entrepreneurship</strong> — our program is built to guide, teach, and grow you.
+    </p>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-bottom: 40px;">
+      <div style="background: #1c1c1c; padding: 20px; border-radius: 10px; width: 280px;">
+        <h3 style="color: #00e5ff; font-size: 22px;">✅ 15-Day Online/Offline Internship</h3>
+        <p style="color: #ccc;">Hands-on training and real projects under expert mentorship.</p>
+      </div>
+      <div style="background: #1c1c1c; padding: 20px; border-radius: 10px; width: 280px;">
+        <h3 style="color: #00e5ff; font-size: 22px;">🎓 Certificate + Joining Letter</h3>
+        <p style="color: #ccc;">Earn a verified Internship Certificate and a Joining Letter.</p>
+      </div>
+      <div style="background: #1c1c1c; padding: 20px; border-radius: 10px; width: 280px;">
+        <h3 style="color: #00e5ff; font-size: 22px;">📈 Personal Growth Guidance</h3>
+        <p style="color: #ccc;">We help you grow not just in tech, but in your overall career path.</p>
+      </div>
+    </div>
+
+    <p style="font-size: 18px; color: #cccccc; margin-bottom: 30px;">
+      Our mission is to build confidence and skills that last. Hundreds of students have already benefitted — are you next?
+    </p>
+
+    <a href="#apply" style="display: inline-block; padding: 15px 30px; background-color: #00e5ff; color: #000; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s;">Apply Now</a>
+  </div>
+</section>
+
+  <section id="apply" data-aos="fade-up">
+    <h2>Apply for Internship</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="phone" placeholder="Phone Number" required>
+      <input type="text" name="branch" placeholder="Branch / College Name" required>
+      <textarea name="message" placeholder="Why do you want to join this internship?" required></textarea>
+      <button type="submit">Submit Application</button>
+    </form>
+  </section>
+
+  <section id="check-onediplomas">
+    <div class="onediplomas-wrapper">
+      <h2>Explore More on OneDiplomas</h2>
+      <p>Find syllabus, paper solutions, internship updates, and student resources on our official OneDiplomas platform.</p>
+      <a href="https://www.onediplomas.site/index.html" target="_blank" class="onediplomas-button">Visit Now</a>
+    </div>
+  </section>
+  
+
+  <section id="contact" data-aos="fade-up">
+    <h2>Contact Us</h2>
+    <p><strong>Email:</strong> contact@onediplomas.site</p>
+    <p><strong>Phone:</strong> +91-9638021014</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 OneDiplomas x Nexora. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
